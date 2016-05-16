@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <h1>Websocket</h1>
+    <ul>
+    </ul>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+<script type="text/javascript" src="push_client.js"></script>
+
+<script>
+function createWebSocket(offId, affId, clientIp, columnType) {
+    if (offId == window.offerId && affId == window.affiliateId && clientIp == window.clientIp && window.columnType == columnType) {
+        return;
+    } else {
+        destoryWebSocket();
+    }
+    var clientId = offId + "_" + affId + "_" + columnType + "_" + clientIp; //保证唯一性
+    var webSocket = new WebSocketClient("eagle", clientId);
+    webSocket.onMessageListener(function(msg) {
+        console.log(msg);
+        $("ul").append($("<li>" + msg + "</li>"))
+        
+    })
+}
+
+function destoryWebSocket() {
+    window.websocket = null;
+//    window.websocket.close();
+}
+createWebSocket(112333,102553,'172.30.30.11','click')
+</script>
+
+</html>
