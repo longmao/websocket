@@ -1,0 +1,75 @@
+.clickCount .countArea {
+    position: absolute;
+    font-size: 3.75em;
+    right: 212px;
+    top: 40px;
+    color: #dedede;
+    border-right: 2px solid rgba(203, 197, 197, 0.36);
+    padding-right: 11px;
+}
+
+body {
+    position: relative;
+    margin: 0;
+}
+
+.map img {
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+.countZone {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 450px;
+    height: 200px;
+
+}
+
+.text {
+    position: absolute;
+    left: 150px;
+    top: 20px;
+    color: #dedede;
+    font-size: 12px;
+}
+
+.time {
+    position: absolute;
+    left: 255px;
+    top: 42px;
+    color: #dedede;
+    font-size: 1.5em;
+}
+
+.logo {
+    height: 55px;
+    width: 237px;
+    background: url(../image/logo.png) no-repeat right center;
+    -moz-background-size: 70% 70%;
+    background-size: 70% 70%;
+    position: absolute;
+    right: 70px;
+    top: 20px;
+}
+
+.theme {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    right: 0;
+    top: 0
+}
+
+.description {
+    position: absolute;
+    right: 60px;
+    top: 74px;
+    font-size: 18px;
+    color: #dedede;
+}
