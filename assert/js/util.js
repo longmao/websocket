@@ -19,10 +19,18 @@ var util = {
         width: window.innerWidth || document.body.clientWidth,
         height: window.innerHeight || document.body.clientHeight
     },
-    splitIntoFiveParts: function(clickCount) {
-        var base_num = parseInt((clickCount / 5).toFixed())
-        var last_num = clickCount - base_num*4
-        return [base_num , base_num, base_num, base_num, last_num]
+    splitIntoMultiParts: function(clickCount) {
+        var base_num = parseInt((clickCount / this.INTERVAL_TIMES).toFixed())
+        var last_num = clickCount - base_num*(this.INTERVAL_TIMES - 1)
+        var arr = [];
+        for (var i = 0 ; i < this.INTERVAL_TIMES; i++) {
+            if(i){
+                arr.push(base_num)
+            }else{
+                arr.push(last_num)
+            }
+        }
+        return arr
     },
-    INTERVAL_TIMES:5
+    INTERVAL_TIMES:9
 }

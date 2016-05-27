@@ -38,7 +38,7 @@ function createWebSocket(offId, affId, clientIp, columnType) {
             _.map(obj, function(v, k) {
                 temp += v
             })
-            var fivePartsArr = util.splitIntoFiveParts(temp)
+            var fivePartsArr = util.splitIntoMultiParts(temp)
             console.info(fivePartsArr)
             window.updateClickCount_interval = setInterval(function() {
                 if (index === util.INTERVAL_TIMES -1 ) {
@@ -51,7 +51,7 @@ function createWebSocket(offId, affId, clientIp, columnType) {
                     refreshClickCountViewHandler(fivePartsArr, index)
                 }
 
-            }, 5000)
+            }, 3000)
             refreshClickCountViewHandler(fivePartsArr, index)
 
 
