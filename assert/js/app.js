@@ -19,13 +19,14 @@ function refreshClickCountViewHandler(fivePartsArr, index) {
 }
 
 function createWebSocket(offId, affId, clientIp, columnType) {
+    var     url = 0 ? 'ws://172.30.30.231:8379' : 'ws://52.20.23.23:8379'
     if (offId == window.offerId && affId == window.affiliateId && clientIp == window.clientIp && window.columnType == columnType) {
         return;
     } else {
         destoryWebSocket();
     }
     var clientId = 'yeahping' + (location.hash ? "_" + location.hash.substr(1) : "_a"); //保证唯一性
-    var webSocket = new WebSocketClient("eagle", clientId);
+    var webSocket = new WebSocketClient(url, "yeahping", clientId);
 
 
     webSocket.onMessageListener(function(msg) {
@@ -91,10 +92,11 @@ function diff(callback) {
     var startTime = getStartTime()
     moment_a = moment(startTime)
     moment_b = moment(Date.now())
-    if (moment_b.diff(moment_a, 'days') > 0) {
+    if (parseInt(moment_b.format("D")) !== parseInt(moment_a.format("D"))) {
         console.log("new days:" + moment_b.days())
         setStartTime()
         util.localStor.setItem("clickCount", 0)
+        updateClickCount()
     } else {
         callback && callback()
     }

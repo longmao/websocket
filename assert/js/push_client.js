@@ -630,12 +630,8 @@ WebSocketClient.prototype = {
 
 
 <!-- online server -->
-function WebSocketClient(appKey, clientId) {
-    var url = getCookie("wpush_server_url");
-    if ('' == url || 'undefined' == url) {
-//        url= 'wss://push.ndpmedia.com';//在机器上绑host
-        url = 'ws://172.30.30.231:8379';//在机器上绑hosmt
-    }
+function WebSocketClient(url, appKey, clientId) {
+
     this.socket = window.socket;
     if (this.socket == null || this.socket == undefined) {
         this.socket = new Socket(url + "/websocket/" + appKey + "/" + clientId);

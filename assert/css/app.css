@@ -1,6 +1,6 @@
 .clickCount .countArea {
     position: absolute;
-    font-size: 3.75em;
+    font-size: 3em;
     right: 212px;
     top: 40px;
     color: #dedede;
@@ -44,7 +44,7 @@ body {
     left: 255px;
     top: 42px;
     color: #dedede;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .logo {
@@ -70,6 +70,6 @@ body {
     position: absolute;
     right: 60px;
     top: 74px;
-    font-size: 18px;
+    font-size: 1em;
     color: #dedede;
 }
