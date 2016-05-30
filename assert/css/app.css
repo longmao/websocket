@@ -1,10 +1,9 @@
 .clickCount .countArea {
     position: absolute;
-    font-size: 3em;
-    right: 210px;
+    font-size: 3.75em;
+    right: 185px;
     top: 40px;
     color: #dedede;
-
 }
 
 body {
@@ -22,7 +21,7 @@ body {
 }
 
 .countZone {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 450px;
@@ -32,7 +31,7 @@ body {
 
 .text {
     position: absolute;
-    left: 166px;
+    left: 190px;
     top: 20px;
     color: #dedede;
     font-size: 12px;
@@ -40,10 +39,10 @@ body {
 
 .time {
     position: absolute;
-    left: 255px;
+    left: 280px;
     top: 42px;
     color: #dedede;
-    font-size: 1em;
+    font-size: 1.2em;
     border-left: 2px solid rgba(203, 197, 197, 0.36);
     padding-left: 11px;
     height: 50px;
@@ -61,30 +60,33 @@ body {
 }
 
 .theme {
-    position: absolute;
+    position: fixed;
     width: 300px;
     height: 200px;
     right: 0;
-    top: 0
+    top: 0;
 }
 
 .description {
     position: absolute;
     right: 60px;
     top: 65px;
-    font-size: 1em;
+    font-size: 1.2em;
     color: #dedede;
 }
 
 @media (max-width: 1000px) {
-  .countZone {
-    width: 430px;
-  }
-
-  .clickCount .countArea {
-    right: 192px;
-  }
-  .time {
-    left: 245px;
-  }
+    .countZone {
+        width: 430px;
+    }
+    .clickCount .countArea {
+        right: 150px;
+    }
+    .time {
+        left: 290px;
+        top: 50px;
+    }
+    .text {
+        left: 200px;
+    }
 }

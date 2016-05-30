@@ -9,21 +9,22 @@
 </head>
 
 <body>
-    <div class="countZone">
-        <div class="text">
-            Sum of today
-        </div>
-        <div class="clickCount">
-            <div class="odometer countArea">
+    <div>
+        <div class="countZone">
+            <div class="text">
+                Sum of today
+            </div>
+            <div class="clickCount">
+                <div class="odometer countArea">
+                </div>
+            </div>
+            <div class="time" id="time">
             </div>
         </div>
-        <div class="time" id="time">
-        
+        <div id="theme" class="theme">
+            <div id="logo" class="logo"></div>
+            <div id="description" class="description">Realtime Traffic Dashboard</div>
         </div>
-    </div>
-    <div id="theme" class="theme">
-        <div id="logo" class="logo"></div>
-        <div id="description" class="description">Realtime Traffic Dashboard</div>
     </div>
     <div class="map" id="map">
         <img src="assert/image/new.gif" alt="">
@@ -47,7 +48,7 @@ setInterval(function() {
 }, 1000)
 updateTime()
 
-diff(function(){
+diff(function() {
     updateClickCount()
 })
 window.odometerOptions = {

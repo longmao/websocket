@@ -93,7 +93,7 @@ function diff(callback) {
     moment_a = moment(startTime)
     moment_b = moment(Date.now())
     if (parseInt(moment_b.format("D")) !== parseInt(moment_a.format("D"))) {
-        console.log("new days:" + moment_b.days())
+        console.log("new days:" + moment_b.format("D"))
         setStartTime()
         util.localStor.setItem("clickCount", 0)
         updateClickCount()
