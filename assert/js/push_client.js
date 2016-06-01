@@ -410,7 +410,12 @@ N.NetDaemon = {
                     ;
                     break;
                 case this.EVENT_PING_SUCCESS:
-                {
+                {   
+                    window.IDLE_TIMES = window.IDLE_TIMES || 0
+                    console.log(window.IDLE_TIMES)
+
+                    window.IDLE_TIMES ++;
+                    if (window.IDLE_TIMES > 6) window.location.reload()
                     console.log('Net status change. from ' + description + ' to STATUS_PING_SUCCESS.');
                 }
                     ;

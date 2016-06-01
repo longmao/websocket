@@ -19,7 +19,7 @@ function refreshClickCountViewHandler(fivePartsArr, index) {
 }
 
 function createWebSocket(offId, affId, clientIp, columnType) {
-    var     url = 0 ? 'ws://172.30.30.231:8379' : 'ws://52.20.23.23:8379'
+    var url = 0 ? 'ws://172.30.30.231:8379' : 'ws://52.20.23.23:8379'
     if (offId == window.offerId && affId == window.affiliateId && clientIp == window.clientIp && window.columnType == columnType) {
         return;
     } else {
@@ -31,6 +31,7 @@ function createWebSocket(offId, affId, clientIp, columnType) {
 
     webSocket.onMessageListener(function(msg) {
         console.log(msg)
+        window.IDLE_TIMES = 0
         diff(function() {
             var temp = 0;
             var obj = JSON.parse(msg);
@@ -41,7 +42,7 @@ function createWebSocket(offId, affId, clientIp, columnType) {
             var fivePartsArr = util.splitIntoMultiParts(temp)
             console.info(fivePartsArr)
             window.updateClickCount_interval = setInterval(function() {
-                if (index === util.INTERVAL_TIMES -1 ) {
+                if (index === util.INTERVAL_TIMES - 1) {
                     index = 0
                     console.log("loop end")
                     clearInterval(window.updateClickCount_interval);
@@ -92,6 +93,8 @@ function diff(callback) {
     var startTime = getStartTime()
     moment_a = moment(startTime)
     moment_b = moment(Date.now())
+    console.log(parseInt(moment_b.format("D")))
+    console.log(parseInt(moment_a.format("D")))
     if (parseInt(moment_b.format("D")) !== parseInt(moment_a.format("D"))) {
         console.log("new days:" + moment_b.format("D"))
         setStartTime()
